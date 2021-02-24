@@ -1,0 +1,40 @@
+{
+  "name": "chat-app-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-start": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/server.js",
+    "queries": "babel-node ./src/database/models/tables.js createTables",
+    "start": "npm run queries && babel-node ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mujohn26/chat-app-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mujohn26/chat-app-backend/issues"
+  },
+  "homepage": "https://github.com/mujohn26/chat-app-backend#readme",
+  "dependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/register": "^7.9.0",
+    "@babel/runtime": "^7.7.6",
+    "admin": "^1.4.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "http": "0.0.1-security",
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1",
+    "url": "^0.11.0"
+  }
+}
