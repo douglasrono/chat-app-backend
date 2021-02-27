@@ -1,10 +1,15 @@
-import dotenv from 'dotenv';
-import { Pool } from 'pg';
+import dotenv from "dotenv";
+import { Pool } from "pg";
 
 dotenv.config();
-const pool = new Pool({ connectionString: process.env.NODE_ENV==="testing"?process.env.DATABASE_URL_TEST :process.env.DATABASE_URL_DEV });
+const pool = new Pool({
+  connectionString:
+    process.env.NODE_ENV === "testing"
+      ? process.env.DATABASE_URL_TEST
+      : process.env.DATABASE_URL_DEV,
+});
 
-pool.on('error', (err) => {
+pool.on("error", (err) => {
   console.log(err);
 });
 
@@ -21,12 +26,23 @@ INSERT INTO users (
     ) VALUES (
         'John',
         'mujohn25@gmail.com',
-        '$2b$10$d9H69WXJ90JViosDOY8bkux594B2Zu.yo/Y0rVsCcBrw3rT6DtnY6'
+        '$2b$10$eitltxD4PIkwBos4blSNfuyowAfezyBihkZ0mi1UuOstlR5gwVVE6'
 );
 DROP TABLE IF EXISTS messages CASCADE;CREATE TABLE messages(
+  senderId SERIAL,
+  receiverName VARCHAR ,
+  message VARCHAR NOT NULL
+); 
+INSERT INTO messages (
+  senderId, receiverName, message
+ ) VALUES (
+     '1',
+     'peter',
+     'hello peter'
+);
+DROP TABLE IF EXISTS room CASCADE;CREATE TABLE room(
   userId SERIAL NOT NULL,
-  message INTEGER NOT NULL,
-  dateCreated VARCHAR NOT NULL
+  roomName VARCHAR NOT NULL
 );
 `);
 
