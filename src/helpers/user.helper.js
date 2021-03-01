@@ -5,9 +5,9 @@ class UserHelper {
     return new Model("messages");
   }
   static insertData = async (messageDatas) => {
-    const { senderId, receiverName, message } = messageDatas;
-    const cols = "senderId,receiverName,message";
-    const sels = `'${senderId}', '${receiverName}', '${message}'`;
+    const { senderId, receiverName, message,receiverId } = messageDatas;
+    const cols = "senderId,receiverName,message,receiverId";
+    const sels = `'${senderId}', '${receiverName}', '${message}', ${receiverId}`;
     let row = await this.model().insert(cols, sels);
   };
 }
