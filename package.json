@@ -7,7 +7,8 @@
     "test": "NODE_ENV=testing babel-node ./src/database/models/tables.js createTables && NODE_ENV=testing nyc --reporter=text --reporter=html --require @babel/polyfill --require @babel/register mocha ./src/tests/*  --timeout 100000 --exit",
     "dev-start": "cross-env NODE_ENV=development nodemon --exec babel-node ./src/server.js",
     "queries": "babel-node ./src/database/models/tables.js createTables",
-    "start": "NODE_ENV=production npm run queries && babel-node ./src/server.js"
+    "start": "NODE_ENV=production npm run queries && node --require @babel/polyfill build/server.js",
+    "build":"babel -d ./build ./src -s"
   },
   "repository": {
     "type": "git",
