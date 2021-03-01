@@ -1,5 +1,8 @@
-const hostname = "localhost";
-const port = 8000;
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const port =process.env.PORT||5000;
 import server from "./routes/index";
 import verifyToken from "./helpers/verify.token";
 import UserHelper from './helpers/user.helper';
