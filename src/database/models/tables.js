@@ -4,6 +4,9 @@ import { Pool } from "pg";
 dotenv.config();
 const pool = new Pool({
   connectionString:process.env.NODE_ENV==="testing"?process.env.DATABASE_URL_TEST :process.env.NODE_ENV==="production"?process.env.DATABASE_URL:process.env.DATABASE_URL_DEV,
+  ssl:{
+    rejectUnauthorized:false
+  }
   
 });
 
