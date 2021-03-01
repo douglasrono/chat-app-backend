@@ -24,14 +24,17 @@ class UserController {
       } else {
         const cols = "userName, email,password";
         const sels = `'${userName}', '${email}', '${hashedPassword}'`;
+
+        let row = await this.model().insert(cols, sels);
+        const user = await this.model().select("*", "email=$1", [email]);
         const token = GenerateToken({
           userName,
           email,
+          id:user[0].id
         });
-        let row = await this.model().insert(cols, sels);
         const data = {
-          userName,
-          email,
+          userName:user[0].userName,
+          email:user[0].email,
           token,
         };
 
@@ -61,8 +64,9 @@ class UserController {
           );
         } else {
           const token = GenerateToken({
-            userName: user[0].userName,
+            userName: user[0].username,
             email: user[0].email,
+            id:user[0].id
           });
           const data = {
             userName: user[0].userName,
@@ -83,7 +87,7 @@ class UserController {
             status: 404,
           })
         );
-      }
+      } 
     } catch (error) {
       res.writeHead(500, { "Content-Type": "application/json" });
       res.end(JSON.stringify({ error: error }));

@@ -7,7 +7,7 @@ class Model {
     this.table = table;
 
     this.pool = new Pool({
-      connectionString: process.env.NODE_ENV==="testing"?process.env.DATABASE_URL_TEST :process.env.DATABASE_URL_DEV,
+      connectionString: process.env.NODE_ENV==="testing"?process.env.DATABASE_URL_TEST :process.env.NODE_ENV==="production"?process.env.DATABASE_URL:process.env.DATABASE_URL_DEV,
     });
 
     this.pool.on('error', (err, client) => {
@@ -31,6 +31,17 @@ class Model {
        throw err;
      }
    }
+
+   selectMessages = async (id) => {
+     try {
+       let query= `SELECT * FROM messages WHERE senderId=${id} OR receiverId=${id}`;
+       const { rows } = await this.pool.query(query);
+       return rows;
+      } catch (err) {
+
+      throw err;
+    }
+  }
 
    // CRUD - CREATE Operation
    async insert(columns, selector, values) {

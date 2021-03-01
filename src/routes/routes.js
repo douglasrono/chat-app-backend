@@ -7,7 +7,6 @@ import MessageController from '../controllers/messages.controller';
 
 class Routes{
 static async checkRoutes(req, res){
-    // var service = require('./service.js');
     const reqUrl = url.parse(req.url, true);
 
     // GET Endpoint
@@ -21,7 +20,7 @@ static async checkRoutes(req, res){
     } 
     
     else if (reqUrl.pathname == '/api/messages' && req.method === 'GET') {
-        // await BodyParser.bodyParser(req)
+        // await BodyParser.bodyParser(req) 
         MessageController.getMessages(req,res);
 
     }
