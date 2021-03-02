@@ -36,8 +36,9 @@ io.on("connection", (socket) => {
       receiverName : receiver[0]===undefined?'Anyonmous': receiver[0].name,
       senderId :sender[0].id,
       receiverId:receiver[0]===undefined?0: receiver[0].id,
-      message
-      
+      message,
+      senderName:sender[0].name
+       
     }
     const insert = await UserHelper.insertData(messageDatas)
     // const messages = await UserHelper.getMessages()
@@ -45,7 +46,9 @@ io.on("connection", (socket) => {
       
       message: message,
       name: User[socket.id],
-      receiverName: receiver[0]===undefined?'Anyonmous': receiver[0].name
+      receiverName: receiver[0]===undefined?'Anyonmous': receiver[0].name,
+      senderid:sender[0].id,
+      sendername:sender[0].name
     });
   });
   socket.on("disconnect", () => {

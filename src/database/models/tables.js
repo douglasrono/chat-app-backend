@@ -34,14 +34,16 @@ DROP TABLE IF EXISTS messages CASCADE;CREATE TABLE messages(
   senderId SERIAL,
   receiverId SERIAL,
   receiverName VARCHAR ,
-  message VARCHAR NOT NULL
+  message VARCHAR NOT NULL,
+  senderName VARCHAR
 ); 
 INSERT INTO messages (
-  senderId, receiverName, message
+  senderId, receiverName, message,senderName
  ) VALUES (
      '1',
      'peter',
-     'hello peter'
+     'hello peter',
+     'John'
 );
 DROP TABLE IF EXISTS room CASCADE;CREATE TABLE room(
   userId SERIAL NOT NULL,
