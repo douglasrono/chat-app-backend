@@ -1,4 +1,4 @@
-![Travis](https://www.travis-ci.com/mujohn26/chat-app-backend.svg?branch=develop) [![Coverage Status](https://coveralls.io/repos/github/mujohn26/chat-app-backend/badge.svg?branch=develop)](https://coveralls.io/github/mujohn26/chat-app-backend?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/51babbda04ba24207d32/maintainability)](https://codeclimate.com/github/mujohn26/chat-app-backend/maintainability)
+![Travis](https://www.travis-ci.com/mujohn26/chat-app-backend.svg?branch=develop) [![Coverage Status](https://coveralls.io/repos/github/mujohn26/chat-app-backend/badge.svg?branch=develop)](https://coveralls.io/github/mujohn26/chat-app-backend?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/51babbda04ba24207d32/maintainability)](https://codeclimate.com/github/mujohn26/chat-app-backend/maintainability)[![Maintainability](https://api.codeclimate.com/v1/badges/7f6b08878d7703f9e206/maintainability)](https://codeclimate.com/github/mujohn26/chat-app-frontend/maintainability)
 
 # Real time chat app
 This is real time chat application . Where two or more users can be able to chat using this system.
