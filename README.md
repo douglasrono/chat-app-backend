@@ -1,3 +1,5 @@
+![Travis](https://www.travis-ci.com/mujohn26/chat-app-backend.svg?branch=develop) [![Coverage Status](https://coveralls.io/repos/github/mujohn26/chat-app-backend/badge.svg?branch=develop)](https://coveralls.io/github/mujohn26/chat-app-backend?branch=develop)
+
 # Real time chat app
 This is real time chat application . Where two or more users can be able to chat using this system.
 
