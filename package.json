@@ -9,7 +9,7 @@
     "queries": "babel-node ./src/database/models/tables.js createTables",
     "start": "NODE_ENV=production npm run queries && node --require @babel/polyfill build/server.js",
     "build":"babel -d ./build ./src -s",
-    "start:heroku": "NODE_ENV=production npm run queries && node --require @babel/polyfill build/server.js",
+    "start:heroku": "NODE_ENV=production node --require @babel/polyfill build/server.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
